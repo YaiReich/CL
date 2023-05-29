@@ -1,0 +1,11 @@
+ Columns . . . :    1  71           Browse                      JBLTD101/QCLSRC 
+ SEU==>                                                               CLINITPRJ 
+ FMT **  ...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7  
+        *************** Beginning of data ************************************* 
+0001.00 PGM                                                                     
+0002.00       CHGCURLIB  CURLIB(JBP10)                                          
+0002.01       MONMSG     MSGID(CPF0000)                                         
+0005.00       ADDLIBLE   LIB(JBPD10)                                            
+0006.00       MONMSG     MSGID(CPF0000)                                         
+0008.00 ENDPGM                                                                  
+        ****************** End of data **************************************** 
