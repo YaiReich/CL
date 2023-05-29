@@ -1,0 +1,19 @@
+ Columns . . . :    1  71           Browse                      JBLTD101/QCLSRC 
+ SEU==>                                                                 TESTOVR 
+ FMT **  ...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7  
+        *************** Beginning of data ************************************* 
+0001.00              PGM                                                        
+0001.01              DCL        VAR(&MBRNAME) TYPE(*CHAR) LEN(10)               
+0001.02              DCL        VAR(&MM)      TYPE(*CHAR) LEN(2)                
+0001.03              DCL        VAR(&YY)      TYPE(*CHAR) LEN(2)                
+0001.04              RTVSYSVAL  SYSVAL(QYEAR) RTNVAR(&YY)                       
+0001.05              RTVSYSVAL  SYSVAL(QMONTH) RTNVAR(&MM)                      
+0001.06              CHGVAR     VAR(&MBRNAME) VALUE('COMP' || &YY || &MM)       
+0001.07  AGAIN:      ADDPFM     FILE(COMPF) MBR(&MBRNAME)                       
+0001.08              MONMSG     MSGID(CPF7306) EXEC(DO)                         
+0001.09               RMVM      FILE(COMPF) MBR(&MBRNAME)                       
+0001.12               GOTO AGAIN                                                
+0001.13              ENDDO                                                      
+0001.14              OVRDBF     FILE(COMPF) MBR(&MBRNAME)                       
+0032.00  BYE:        ENDPGM                                                     
+        ****************** End of data **************************************** 
