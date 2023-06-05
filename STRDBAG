@@ -1,14 +1,17 @@
- Columns . . . :    1  71           Browse                      JBLTD101/QCLSRC 
+ Columns . . . :    1  71           Browse                       JBLTD11/QCLSRC 
  SEU==>                                                                       D 
  FMT **  ...+... 1 ...+... 2 ...+... 3 ...+... 4 ...+... 5 ...+... 6 ...+... 7  
         *************** Beginning of data ************************************* 
 0001.00              PGM        PARM(&PGM)                                      
-0001.01              DCL        VAR(&PGM) TYPE(*CHAR) LEN(10)                   
-0001.02                                                                         
-0001.03              ENDDBG                                                     
-0001.04              MONMSG     MSGID(CPF0000)                                  
-0001.05              RCLRSC                                                     
-0001.06              MONMSG     MSGID(CPF0000)                                  
-0001.07              STRDBG     PGM(&PGM) UPDPROD(*YES)                         
-0002.00              ENDPGM                                                     
+0003.00              DCL        VAR(&PGM) TYPE(*CHAR) LEN(10)                   
+0007.00                                                                         
+0007.01              ENDDBG                                                     
+0007.02              MONMSG     MSGID(CPF0000)                                  
+0007.03              RCLRSC                                                     
+0007.04                                                                         
+0007.05              CHKOBJ     OBJ(&PGM) OBJTYPE(*PGM)                         
+0007.06                                                                         
+0007.07              STRDBG     PGM(&PGM) UPDPROD(*YES)                         
+0007.08              CALL       PGM(&PGM)                                       
+0032.00              ENDPGM                                                     
         ****************** End of data **************************************** 
