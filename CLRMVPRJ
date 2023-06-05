@@ -1,0 +1,17 @@
+        *************** Beginning of data ************************************* 
+0001.00              PGM                                                        
+0002.00              DCL        VAR(&CRUSR) TYPE(*CHAR) LEN(10)                 
+0003.00              RTVJOBA    CURUSER(&CRUSR)                                 
+0004.00              IF (&CRUSR *NE 'JBLTD10') DO                               
+0005.00               SNDPGMMSG MSG('YOU ARE NOT AUTHORIZED TO RUN THIS +       
+0006.00                PROGRAM') TOPGMQ(*EXT)                                   
+0007.00               GOTO END                                                  
+0008.00                                       ENDDO                             
+0009.00              CHGCURLIB  CURLIB(JBLTD101)                                
+0010.00              MONMSG     MSGID(CPF0000) EXEC(SNDPGMMSG MSG('FATAL +      
+0011.00                           ERROR, SHUTTING DOWN'))                       
+0012.00              RMVLIBLE   LIB(JBPD10)                                     
+0013.00              MONMSG     MSGID(CPF0000) EXEC(SNDPGMMSG MSG('FATAL +      
+0014.00                           ERROR, SHUTTING DOWN'))                       
+0015.00  END:        ENDPGM                                                     
+        ****************** End of data **************************************** 
